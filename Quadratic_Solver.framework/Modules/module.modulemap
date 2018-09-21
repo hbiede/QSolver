@@ -1,0 +1,6 @@
+framework module Quadratic_Solver {
+  umbrella header "Quadratic_Solver.h"
+
+  export *
+  module * { export * }
+}
