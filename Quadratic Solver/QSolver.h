@@ -13,14 +13,14 @@
 
 @interface QSolver : NSObject
 
-- (void) setA:(NSNumber *)input;
-- (void) setB:(NSNumber *)input;
-- (void) setC:(NSNumber *)input;
-- (void) setValues:(NSNumber *)newA b:(NSNumber *)newB c:(NSNumber *)newC;
-- (NSString *) getSolutionAsString;
-- (BOOL) isRealNumberSolution;
-- (double) getSolutionAsNumberPositive;
-- (double) getSolutionAsNumberNegative;
++ (void) setA:(NSNumber *)input;
++ (void) setB:(NSNumber *)input;
++ (void) setC:(NSNumber *)input;
++ (void) setValues:(NSNumber *)newA b:(NSNumber *)newB c:(NSNumber *)newC;
++ (NSString *) getSolutionAsString;
++ (BOOL) isRealNumberSolution;
++ (double) getSolutionAsNumberPositive;
++ (double) getSolutionAsNumberNegative;
 
 @end
 
