@@ -17,7 +17,7 @@
 }
 
 /// Sets the value of A. Only sets A if non-zero.
-- (void) setA:(NSNumber *)input
++ (void) setA:(NSNumber *)input
 {
     if (input != 0) {
         a = input;
@@ -25,19 +25,19 @@
 }
 
 /// Sets the value of B.
-- (void) setB:(NSNumber *)input
++ (void) setB:(NSNumber *)input
 {
     b = input;
 }
 
 /// Sets the value of C.
-- (void) setC:(NSNumber *)input
++ (void) setC:(NSNumber *)input
 {
     c = input;
 }
 
 /// Sets the value of A, B, and C. Only sets A if non-zero.
-- (void) setValues:(NSNumber *)newA b:(NSNumber *)newB c:(NSNumber *)newC
++ (void) setValues:(NSNumber *)newA b:(NSNumber *)newB c:(NSNumber *)newC
 {
     [self setA:newA];
     [self setB:newB];
@@ -48,7 +48,7 @@
 /// """-b ± √(b^2-4ac)
 ///    ---------------
 ///          2a         """
-- (NSString *) getSolutionAsString
++ (NSString *) getSolutionAsString
 {
     double numberSolution = [self getSolutionAsNumberPositive];
     if (numberSolution == floor(numberSolution) && numberSolution == [self getSolutionAsNumberNegative]) {
@@ -156,13 +156,13 @@
 }
 
 /// Returns a boolean representing if the solution to the equation for the current values of a, b, and c has a real number solution
-- (BOOL) isRealNumberSolution
++ (BOOL) isRealNumberSolution
 {
     return (pow(b.doubleValue, 2) - 4 * a.doubleValue * c.doubleValue) < 0;
 }
 
 /// Returns the solution (achieved through adding in the numerator) as an NSNumber. If the solution is imaginary, returns -1;
-- (double) getSolutionAsNumberPositive
++ (double) getSolutionAsNumberPositive
 {
     if ([self isRealNumberSolution]) {
         return (-b.doubleValue + (pow(b.doubleValue, 2) - 4 * a.doubleValue * c.doubleValue))/(2*a.doubleValue);
@@ -171,10 +171,10 @@
 }
 
 /// Returns the solution (achieved through subtracting in the numerator) as an NSNumber. If the solution is imaginary, returns -1;
-- (double) getSolutionAsNumberNegative
++ (double) getSolutionAsNumberNegative
 {
     if ([self isRealNumberSolution]) {
-        return (-b.doubleValue - (pow(b.doubleValue, 2) - 4 * a.doubleValue * c.doubleValue))/(2*a.doubleValue);
+        return (-b.doubleValue + (pow(b.doubleValue, 2) - 4 * a.doubleValue * c.doubleValue))/(2*a.doubleValue);
     }
     return -1;
 }
